@@ -1,6 +1,4 @@
 /* eslint-disable no-alert */
-/* eslint-disable no-return-assign */
-/* eslint-disable implicit-arrow-linebreak */
 import puppetteer from 'puppeteer';
 import { fork } from 'child_process';
 // import { type } from 'os';
