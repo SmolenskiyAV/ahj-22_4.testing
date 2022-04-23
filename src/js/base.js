@@ -1,3 +1,8 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable no-cond-assign */
+/* eslint-disable consistent-return */
+/* eslint-disable no-alert */
+/* eslint-disable no-plusplus */
 import { toggleOffLabel } from './actions';
 
 export function preDetectCardType(number) { // функция предварительной проверки номера карты
@@ -23,7 +28,7 @@ export function preDetectCardType(number) { // функция предварит
   }
 }
 
-export function findLabel(key) { // функция поиска элемента, содержащий лэйбл карты, соответствующий ключю
+export function findLabel(key) { // функция поиска элемента, содержащий лэйбл карты
   if (typeof window !== 'undefined') {
     const cardItems = document.querySelectorAll('.card'); // поиск коллекции "card"
     for (let i = 0; i < cardItems.length; i++) { // перебор всей коллекции "card"
@@ -33,13 +38,13 @@ export function findLabel(key) { // функция поиска элемента
 }
 
 export function luhnAlgorithm(value) { // функция проверки номера карты (алгоритм "Луна")
-  value = value.replace(/\D/g, '');
+  const value2 = value.replace(/\D/g, '');
 
   let nCheck = 0;
   let bEven = false;
 
-  for (let n = value.length - 1; n >= 0; n--) {
-    let nDigit = parseInt(value.charAt(n), 10);
+  for (let n = value2.length - 1; n >= 0; n--) {
+    let nDigit = parseInt(value2.charAt(n), 10);
 
     if (bEven && (nDigit *= 2) > 9) {
       nDigit -= 9;
