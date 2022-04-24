@@ -3,7 +3,7 @@
 /* eslint-disable consistent-return */
 /* eslint-disable no-alert */
 /* eslint-disable no-plusplus */
-import { toggleOffLabel } from './actions';
+import { toggleOffLabel, displayResultValidation } from './actions';
 
 export function preDetectCardType(number) { // функция предварительной проверки номера карты
   const re = {
@@ -57,9 +57,13 @@ export function luhnAlgorithm(value) { // функция проверки ном
   return (nCheck % 10) === 0;
 }
 
-export function supportFunc(activatedLabel, str) { // вспомогательная функция
+export function supportFunc(activatedLabel, str, elementInput) { // вспомогательная функция
   if (activatedLabel !== undefined) toggleOffLabel(activatedLabel);
   if (luhnAlgorithm(str)) {
-    alert('card-number is OK!');
-  } else alert('INVALID card-number!!!');
+    displayResultValidation(true, str);
+  } else {
+    displayResultValidation(false, str);
+  }
+  // eslint-disable-next-line no-param-reassign
+  elementInput.value = ''; // очистка поля
 }

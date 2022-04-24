@@ -27,14 +27,12 @@ document.addEventListener('DOMContentLoaded', () => { // помещаем addEve
 
   elementInput.addEventListener('keyup', (e) => { //  обработка события нажатия "Enter" в поле <input>
     if (e.key === 'Enter') {
-      elementInput.value = ''; // очистка поля
-      supportFunc(activatedLabel, str);
+      supportFunc(activatedLabel, str, elementInput);
     }
   });
 
   elementBtn.addEventListener('click', () => { //  обработка события нажатия кнопки <a>
     elementBtn.classList.add('btn-success');
-    elementInput.value = ''; // очистка поля
-    supportFunc(activatedLabel, str);
+    supportFunc(activatedLabel, str, elementInput);
   });
 });

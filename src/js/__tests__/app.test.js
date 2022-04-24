@@ -25,7 +25,7 @@ class BankCardsData { // Класс для проверочных данных
 }
 
 // проверка функции алгоритма "Луна"
-test('shoud check card-number validation by Luhn algorithm', () => {
+test('shoud check card-number positive validation by Luhn algorithm', () => {
   const amexValue = luhnAlgorithm(String(345936346788903));
   const amexKey = preDetectCardType(345936346788903);
   const amex = { [amexKey]: amexValue };
@@ -50,5 +50,23 @@ test('shoud check card-number validation by Luhn algorithm', () => {
     { Visa: true },
     { JCB: true },
     { Discover: true },
+  ]);
+});
+
+test('shoud check card-number nadative validation by Luhn algorithm', () => {
+  const amexValue = luhnAlgorithm(String(345936356798903));
+  const amexKey = preDetectCardType(345936356798903);
+  const amex = { [amexKey]: amexValue };
+
+  const visaValue = luhnAlgorithm(String(4556015986206505));
+  const visaKey = preDetectCardType(4556015986206505);
+  const visa = { [visaKey]: visaValue };
+
+  const m = new BankCardsData();
+  m.addAll(amex, visa);
+  const result = m.toArray();
+  expect(result).toEqual([
+    { American_Express: false },
+    { Visa: false },
   ]);
 });

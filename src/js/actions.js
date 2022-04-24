@@ -80,3 +80,18 @@ export function toggleOffLabel(deactivatingElement) { // функция "при�
       break;
   }
 }
+
+export function displayResultValidation(value, cardNumber) { // отображение проверенного номера
+  const resultValidation = document.getElementById('result_validation');
+  if (resultValidation.classList.contains('hided')) resultValidation.classList.remove('hided');
+  if (resultValidation.classList.contains('validNumber')) resultValidation.classList.remove('validNumber');
+  if (resultValidation.classList.contains('invalidNumber')) resultValidation.classList.remove('invalidNumber');
+  resultValidation.querySelector('p').innerHTML = cardNumber;
+  if (value) {
+    resultValidation.classList.add('validNumber');
+    resultValidation.querySelector('div').innerHTML = 'card-number is OK!';
+  } else {
+    resultValidation.classList.add('invalidNumber');
+    resultValidation.querySelector('div').innerHTML = 'INVALID card-number!!!';
+  }
+}

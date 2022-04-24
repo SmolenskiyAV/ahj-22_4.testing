@@ -217,3 +217,15 @@
   .card.diners_club {
     background-image: url(../img/diners_club.png);
   }
+
+  .hided {
+    display: none;
+  }
+
+  .validNumber {
+    color: #398439;
+  }
+
+  .invalidNumber {
+    color: red;
+  }

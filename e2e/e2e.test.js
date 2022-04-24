@@ -42,7 +42,7 @@ describe('Credit Card Validator form', () => {
     await page.goto(baseUrl);
   });
 
-  test('should test luhnAlgorithm', async () => {
+  test('should positive test luhnAlgorithm', async () => {
     let result = '';
     await page.goto(baseUrl);
     const form = await page.$('#form');
@@ -50,10 +50,18 @@ describe('Credit Card Validator form', () => {
     await input.type('3551115647119851');
     const submit = await form.$('#submitform');
     await submit.click();
-    await page.on('dialog', (dialog) => {
-      // получить предупреждающее сообщение
-      result = dialog.message();
-    });
+    result = await page.evaluate((el) => el.innerHTML, await page.$('#marker_validation')); // извлечение текста из элемента
     expect(result).toBe('card-number is OK!');
+  });
+  test('should negative test luhnAlgorithm', async () => {
+    let result = '';
+    await page.goto(baseUrl);
+    const form = await page.$('#form');
+    const input = await form.$('#card_number');
+    await input.type('3551115647229851');
+    const submit = await form.$('#submitform');
+    await submit.click();
+    result = await page.evaluate((el) => el.innerHTML, await page.$('#marker_validation')); // извлечение текста из элемента
+    expect(result).toBe('INVALID card-number!!!');
   });
 });
