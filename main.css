@@ -1,0 +1,236 @@
+.content {
+  display: flex;
+  flex-flow: column wrap
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto    
+}
+
+@media (min-width:768px) {
+    .container {
+        width: 750px
+    }
+}
+
+@media (min-width:992px) {
+    .container {
+        width: 970px
+    }
+}
+
+@media (min-width:1200px) {
+    .container {
+        width: 1170px
+    }
+}
+
+@media (min-width:992px) {
+    .col-md-5 {
+        float: left
+    }
+}
+
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    background-image: none;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    border-top-color: transparent;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-right-color: transparent;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-bottom-color: transparent;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color: transparent;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-image-outset: 0;
+    border-image-repeat: stretch;
+    border-image-slice: 100%;
+    border-image-source: none;
+    border-image-width: 1;
+}
+
+.btn-success:hover {
+    color: #fff;
+    background-color: #449d44;
+    border-color: #398439;
+  }
+  .btn.focus, .btn:focus, .btn:hover {
+    text-decoration: none;
+  }
+
+  .btn:active {
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+    box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+  }
+
+  .form-inline .form-control {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+  }
+
+  .form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  }
+  
+  .form-control:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+  }
+
+  input {
+    display: inline-block;
+    appearance: auto;
+    -moz-default-appearance: textfield;
+    padding: 1px;
+    border: 2px inset ThreeDLightShadow;
+    background-color: Field;
+    color: FieldText;
+    font: -moz-field;
+    text-rendering: optimizeLegibility;
+    cursor: text;
+  }
+
+  .list-unstyled {
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .cards {
+    margin: 10px 0;
+    height: 25px;
+  }
+
+  ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    padding-inline-start: 40px;
+  }
+
+  .card {
+    float: left;
+    width: 39px;
+    height: 25px;
+    text-indent: -9999px;
+    background-position: 0 0;
+    margin-right: 4px;
+  }
+
+  .card.amex_gray {
+    background-image: url(./64db67e35eba3e03d1fc.png);
+  }
+  .card.amex {
+    background-image: url(./f1427b09272694fbf45d.png);
+  }
+
+  .card.visa_gray {
+    background-image: url(./3e0b84124a58e5bc9880.png);
+  }
+  .card.visa {
+    background-image: url(./4034eda9703860cfc954.png);
+  }
+
+  .card.master_gray {
+    background-image: url(./4c5153a2155ed391dfb8.png);
+  }
+  .card.master {
+    background-image: url(./391b95b91651bd5b5df7.png);
+  }
+
+  .card.discover_gray {
+    background-image: url(./de0b76797076d22566d2.png);
+  }
+  .card.discover {
+    background-image: url(./5744fb5dcef663832a6b.png);
+  }
+
+  .card.jcb_gray {
+    background-image: url(./3ef1d02763461022105c.png);
+  }
+  .card.jcb {
+    background-image: url(./09f82384c2e2e70558a4.png);
+  }
+
+  .card.mir_gray {
+    background-image: url(./80f6afe0c3279a8d6648.png);
+  }
+  .card.mir {
+    background-image: url(./4714166b60ae3fb0c3bb.png);
+  }
+
+  .card.diners_club_gray {
+    background-image: url(./1a3caf90b5aa05c4e4f3.png);
+  }
+  .card.diners_club {
+    background-image: url(./e5396c4a39c781ebb675.png);
+  }
+
+  .hided {
+    display: none;
+  }
+
+  .validNumber {
+    color: #398439;
+  }
+
+  .invalidNumber {
+    color: red;
+  }
